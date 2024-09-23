@@ -1,0 +1,976 @@
+[
+    {
+        "eventId": "5022603",
+        "description": null,
+        "cause": "M25 Clockwise Jct 1A to Jct 2\nLane, slip road, and link road closure for sign works\nDiversion via National Highways network",
+        "severity": "HIGHEST",
+        "roadName": "M25",
+        "isCompleted": false,
+        "isConfirmed": false,
+        "location": {
+            "latitude": 51.435215,
+            "longitude": 0.23923641,
+            "junctionUpstream": "",
+            "junctionDownstream": ""
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1727125362807,
+        "startDate": 1727125200000,
+        "endDate": 1727152200000,
+        "periods": [
+            {
+                "start": 1727125200000,
+                "end": 1727152200000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Lane 1",
+                "status": "CLOSED"
+            }
+        ],
+        "fullClosure": true,
+        "additionalInfo": false
+    },
+    {
+        "eventId": "5034303",
+        "description": null,
+        "cause": "",
+        "severity": "HIGHEST",
+        "roadName": "M25",
+        "isCompleted": false,
+        "isConfirmed": true,
+        "location": {
+            "latitude": 51.435223,
+            "longitude": 0.23923329,
+            "junctionUpstream": "",
+            "junctionDownstream": ""
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1727126003047,
+        "startDate": 1727125943926,
+        "endDate": 1727150400000,
+        "periods": [
+            {
+                "start": 1727125943926,
+                "end": 1727150400000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Lane 1",
+                "status": "CLOSED"
+            }
+        ],
+        "fullClosure": true,
+        "additionalInfo": false
+    },
+    {
+        "eventId": "5022604",
+        "description": null,
+        "cause": "M25 Clockwise Jct 1A to Jct 2\nLane, slip road, and link road closure for sign works\nDiversion via National Highways network",
+        "severity": "LOW",
+        "roadName": "M25",
+        "isCompleted": false,
+        "isConfirmed": false,
+        "location": {
+            "latitude": 51.435505,
+            "longitude": 0.23914725,
+            "junctionUpstream": "J1A",
+            "junctionDownstream": "J1B|2"
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1727125364166,
+        "startDate": 1727125200000,
+        "endDate": 1727152200000,
+        "periods": [
+            {
+                "start": 1727125200000,
+                "end": 1727152200000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Hard Shoulder",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 1",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 2",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 3",
+                "status": "NORMAL"
+            }
+        ],
+        "fullClosure": false,
+        "additionalInfo": false
+    },
+    {
+        "eventId": "5024734",
+        "description": null,
+        "cause": "M25 Anticlockwise Jct 3 to A282 Northbound Jct 1A\nLane closures and Entry slip road closure for sign works \nDiversion via National Highways network",
+        "severity": "MEDIUM",
+        "roadName": "M25",
+        "isCompleted": false,
+        "isConfirmed": false,
+        "location": {
+            "latitude": 51.438187,
+            "longitude": 0.2381129,
+            "junctionUpstream": "",
+            "junctionDownstream": ""
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1726664523515,
+        "startDate": 1727211600000,
+        "endDate": 1727238600000,
+        "periods": [
+            {
+                "start": 1727211600000,
+                "end": 1727238600000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Lane 1",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 2",
+                "status": "CLOSED"
+            }
+        ],
+        "fullClosure": true,
+        "additionalInfo": false
+    },
+    {
+        "eventId": "5022602",
+        "description": null,
+        "cause": "M25 Clockwise Jct 1A to Jct 2\nLane, slip road, and link road closure for sign works\nDiversion via National Highways network",
+        "severity": "HIGHEST",
+        "roadName": "M25",
+        "isCompleted": false,
+        "isConfirmed": false,
+        "location": {
+            "latitude": 51.437656,
+            "longitude": 0.23965165,
+            "junctionUpstream": "",
+            "junctionDownstream": ""
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1727125361446,
+        "startDate": 1727125200000,
+        "endDate": 1727152200000,
+        "periods": [
+            {
+                "start": 1727125200000,
+                "end": 1727152200000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Lane 1",
+                "status": "CLOSED"
+            }
+        ],
+        "fullClosure": true,
+        "additionalInfo": false
+    },
+    {
+        "eventId": "4989629",
+        "description": null,
+        "cause": "A282 northbound Dartford Crossing West Tunnel.\nTunnel closure for maintenance works.\nDiversion via National Highways network.",
+        "severity": "LOW",
+        "roadName": "M25",
+        "isCompleted": false,
+        "isConfirmed": false,
+        "location": {
+            "latitude": 51.450573,
+            "longitude": 0.23843083,
+            "junctionUpstream": "J1B|2",
+            "junctionDownstream": "J1A"
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1727125222307,
+        "startDate": 1727125200000,
+        "endDate": 1727497800000,
+        "periods": [
+            {
+                "start": 1726606800000,
+                "end": 1726633800000
+            },
+            {
+                "start": 1726693200000,
+                "end": 1726720200000
+            },
+            {
+                "start": 1726779600000,
+                "end": 1726806600000
+            },
+            {
+                "start": 1726869600000,
+                "end": 1726893000000
+            },
+            {
+                "start": 1727125200000,
+                "end": 1727152200000
+            },
+            {
+                "start": 1727211600000,
+                "end": 1727238600000
+            },
+            {
+                "start": 1727298000000,
+                "end": 1727325000000
+            },
+            {
+                "start": 1727384400000,
+                "end": 1727411400000
+            },
+            {
+                "start": 1727474400000,
+                "end": 1727497800000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Lane 1",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 2",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 3",
+                "status": "NORMAL"
+            },
+            {
+                "laneName": "Lane 4",
+                "status": "NORMAL"
+            }
+        ],
+        "fullClosure": false,
+        "additionalInfo": false
+    },
+    {
+        "eventId": "5034292",
+        "description": null,
+        "cause": "A282 Northbound Dartford Crossing East Tunnel\nTunnel closure for bridge joint works\nDiversion via National Highways network",
+        "severity": "LOW",
+        "roadName": "M25",
+        "isCompleted": false,
+        "isConfirmed": false,
+        "location": {
+            "latitude": 51.450573,
+            "longitude": 0.23843083,
+            "junctionUpstream": "J1B|2",
+            "junctionDownstream": "J1A"
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1727125865140,
+        "startDate": 1727730000000,
+        "endDate": 1728532800000,
+        "periods": [
+            {
+                "start": 1727730000000,
+                "end": 1727755200000
+            },
+            {
+                "start": 1727816400000,
+                "end": 1727841600000
+            },
+            {
+                "start": 1727902800000,
+                "end": 1727928000000
+            },
+            {
+                "start": 1727989200000,
+                "end": 1728014400000
+            },
+            {
+                "start": 1728079200000,
+                "end": 1728104400000
+            },
+            {
+                "start": 1728334800000,
+                "end": 1728360000000
+            },
+            {
+                "start": 1728507600000,
+                "end": 1728532800000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Lane 1",
+                "status": "NORMAL"
+            },
+            {
+                "laneName": "Lane 2",
+                "status": "NORMAL"
+            },
+            {
+                "laneName": "Lane 3",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 4",
+                "status": "CLOSED"
+            }
+        ],
+        "fullClosure": false,
+        "additionalInfo": false
+    },
+    {
+        "eventId": "5032217",
+        "description": null,
+        "cause": "A282 Northbound Dartford Crossing East Tunnel\nTunnel closure for maintenance works,\nDiversion via National Highways network.",
+        "severity": "LOW",
+        "roadName": "M25",
+        "isCompleted": false,
+        "isConfirmed": false,
+        "location": {
+            "latitude": 51.450573,
+            "longitude": 0.23843083,
+            "junctionUpstream": "J1B|2",
+            "junctionDownstream": "J1A"
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1727039466147,
+        "startDate": 1727643600000,
+        "endDate": 1727668800000,
+        "periods": [
+            {
+                "start": 1727643600000,
+                "end": 1727668800000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Lane 1",
+                "status": "NORMAL"
+            },
+            {
+                "laneName": "Lane 2",
+                "status": "NORMAL"
+            },
+            {
+                "laneName": "Lane 3",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 4",
+                "status": "CLOSED"
+            }
+        ],
+        "fullClosure": false,
+        "additionalInfo": false
+    },
+    {
+        "eventId": "5031343",
+        "description": null,
+        "cause": "A282 northbound Dartford Crossing West Tunnel.\nTunnel closure for maintenance works.\nDiversion via National Highways network.",
+        "severity": "LOW",
+        "roadName": "M25",
+        "isCompleted": false,
+        "isConfirmed": false,
+        "location": {
+            "latitude": 51.450573,
+            "longitude": 0.23843083,
+            "junctionUpstream": "J1B|2",
+            "junctionDownstream": "J1A"
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1726953056694,
+        "startDate": 1727557200000,
+        "endDate": 1727582400000,
+        "periods": [
+            {
+                "start": 1727557200000,
+                "end": 1727582400000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Lane 1",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 2",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 3",
+                "status": "NORMAL"
+            },
+            {
+                "laneName": "Lane 4",
+                "status": "NORMAL"
+            }
+        ],
+        "fullClosure": false,
+        "additionalInfo": false
+    },
+    {
+        "eventId": "5034282",
+        "description": null,
+        "cause": "",
+        "severity": "HIGHEST",
+        "roadName": "M25",
+        "isCompleted": false,
+        "isConfirmed": true,
+        "location": {
+            "latitude": 51.453213,
+            "longitude": 0.24029613,
+            "junctionUpstream": "",
+            "junctionDownstream": ""
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1727124869084,
+        "startDate": 1727124836501,
+        "endDate": 1727154000000,
+        "periods": [
+            {
+                "start": 1727124836501,
+                "end": 1727154000000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Lane 1",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 2",
+                "status": "CLOSED"
+            }
+        ],
+        "fullClosure": true,
+        "additionalInfo": false
+    },
+    {
+        "eventId": "5032218",
+        "description": null,
+        "cause": "A282 Northbound Dartford Crossing East Tunnel\nTunnel closure for maintenance works,\nDiversion via National Highways network.",
+        "severity": "LOW",
+        "roadName": "M25",
+        "isCompleted": false,
+        "isConfirmed": false,
+        "location": {
+            "latitude": 51.45367,
+            "longitude": 0.24303003,
+            "junctionUpstream": "J1A",
+            "junctionDownstream": "J30|31"
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1727039466191,
+        "startDate": 1727643600000,
+        "endDate": 1727668800000,
+        "periods": [
+            {
+                "start": 1727643600000,
+                "end": 1727668800000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Lane 1",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 2",
+                "status": "CLOSED"
+            }
+        ],
+        "fullClosure": true,
+        "additionalInfo": false
+    },
+    {
+        "eventId": "5034293",
+        "description": null,
+        "cause": "A282 Northbound Dartford Crossing East Tunnel\nTunnel closure for bridge joint works\nDiversion via National Highways network",
+        "severity": "LOW",
+        "roadName": "M25",
+        "isCompleted": false,
+        "isConfirmed": false,
+        "location": {
+            "latitude": 51.45367,
+            "longitude": 0.24303003,
+            "junctionUpstream": "J1A",
+            "junctionDownstream": "J30|31"
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1727125865200,
+        "startDate": 1727730000000,
+        "endDate": 1728532800000,
+        "periods": [
+            {
+                "start": 1727730000000,
+                "end": 1727755200000
+            },
+            {
+                "start": 1727816400000,
+                "end": 1727841600000
+            },
+            {
+                "start": 1727902800000,
+                "end": 1727928000000
+            },
+            {
+                "start": 1727989200000,
+                "end": 1728014400000
+            },
+            {
+                "start": 1728079200000,
+                "end": 1728104400000
+            },
+            {
+                "start": 1728334800000,
+                "end": 1728360000000
+            },
+            {
+                "start": 1728507600000,
+                "end": 1728532800000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Lane 1",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 2",
+                "status": "CLOSED"
+            }
+        ],
+        "fullClosure": true,
+        "additionalInfo": false
+    },
+    {
+        "eventId": "5034283",
+        "description": null,
+        "cause": "",
+        "severity": "HIGHEST",
+        "roadName": "M25",
+        "isCompleted": false,
+        "isConfirmed": true,
+        "location": {
+            "latitude": 51.46104,
+            "longitude": 0.25390625,
+            "junctionUpstream": "",
+            "junctionDownstream": ""
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1727124906397,
+        "startDate": 1727124824103,
+        "endDate": 1727150400000,
+        "periods": [
+            {
+                "start": 1727124824103,
+                "end": 1727150400000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Lane 1",
+                "status": "UNKNOWN"
+            },
+            {
+                "laneName": "Lane 2",
+                "status": "UNKNOWN"
+            }
+        ],
+        "fullClosure": false,
+        "additionalInfo": false
+    },
+    {
+        "eventId": "5022605",
+        "description": null,
+        "cause": "M25 Clockwise Jct 1A to Jct 2\nLane, slip road, and link road closure for sign works\nDiversion via National Highways network",
+        "severity": "LOW",
+        "roadName": "M25",
+        "isCompleted": false,
+        "isConfirmed": false,
+        "location": {
+            "latitude": 51.459763,
+            "longitude": 0.25403938,
+            "junctionUpstream": "J1A",
+            "junctionDownstream": "J1B|2"
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1727125365796,
+        "startDate": 1727125200000,
+        "endDate": 1727152200000,
+        "periods": [
+            {
+                "start": 1727125200000,
+                "end": 1727152200000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Lane 1",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 2",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 3",
+                "status": "NORMAL"
+            },
+            {
+                "laneName": "Lane 4",
+                "status": "NORMAL"
+            }
+        ],
+        "fullClosure": false,
+        "additionalInfo": false
+    },
+    {
+        "eventId": "5034336",
+        "description": null,
+        "cause": "M25 Anticlockwise Jct 31 to Jct 30\nCarriageway closure for gully works\nDiversion via Local Authority roads and National Highways network",
+        "severity": "LOWEST",
+        "roadName": "M25",
+        "isCompleted": false,
+        "isConfirmed": false,
+        "location": {
+            "latitude": 51.47658,
+            "longitude": 0.26614827,
+            "junctionUpstream": "",
+            "junctionDownstream": ""
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1727126490227,
+        "startDate": 1727730000000,
+        "endDate": 1728532800000,
+        "periods": [
+            {
+                "start": 1727730000000,
+                "end": 1727755200000
+            },
+            {
+                "start": 1727816400000,
+                "end": 1727841600000
+            },
+            {
+                "start": 1727902800000,
+                "end": 1727928000000
+            },
+            {
+                "start": 1727989200000,
+                "end": 1728014400000
+            },
+            {
+                "start": 1728079200000,
+                "end": 1728104400000
+            },
+            {
+                "start": 1728334800000,
+                "end": 1728360000000
+            },
+            {
+                "start": 1728507600000,
+                "end": 1728532800000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Lane 1",
+                "status": "NORMAL"
+            },
+            {
+                "laneName": "Lane 2",
+                "status": "CLOSED"
+            }
+        ],
+        "fullClosure": false,
+        "additionalInfo": false
+    },
+    {
+        "eventId": "5034338",
+        "description": null,
+        "cause": "M25 Anticlockwise Jct 31 to Jct 30\nCarriageway closure for gully works\nDiversion via Local Authority roads and National Highways network",
+        "severity": "LOWEST",
+        "roadName": "M25",
+        "isCompleted": false,
+        "isConfirmed": false,
+        "location": {
+            "latitude": 51.476433,
+            "longitude": 0.26627505,
+            "junctionUpstream": "J1A",
+            "junctionDownstream": "J30|31"
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1727126490438,
+        "startDate": 1727730000000,
+        "endDate": 1728532800000,
+        "periods": [
+            {
+                "start": 1727730000000,
+                "end": 1727755200000
+            },
+            {
+                "start": 1727816400000,
+                "end": 1727841600000
+            },
+            {
+                "start": 1727902800000,
+                "end": 1727928000000
+            },
+            {
+                "start": 1727989200000,
+                "end": 1728014400000
+            },
+            {
+                "start": 1728079200000,
+                "end": 1728104400000
+            },
+            {
+                "start": 1728334800000,
+                "end": 1728360000000
+            },
+            {
+                "start": 1728507600000,
+                "end": 1728532800000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Lane 1",
+                "status": "NORMAL"
+            },
+            {
+                "laneName": "Lane 2",
+                "status": "CLOSED"
+            }
+        ],
+        "fullClosure": false,
+        "additionalInfo": false
+    },
+    {
+        "eventId": "5000179",
+        "description": null,
+        "cause": "A282 clockwise Jct 31 to Jct 1a\nLane closures for painting works. ",
+        "severity": "LOW",
+        "roadName": "M25",
+        "isCompleted": false,
+        "isConfirmed": false,
+        "location": {
+            "latitude": 51.47918,
+            "longitude": 0.26666236,
+            "junctionUpstream": "J30|31",
+            "junctionDownstream": "J1A"
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1726896498767,
+        "startDate": 1727211600000,
+        "endDate": 1728104400000,
+        "periods": [
+            {
+                "start": 1726869600000,
+                "end": 1726894800000
+            },
+            {
+                "start": 1727211600000,
+                "end": 1727238600000
+            },
+            {
+                "start": 1727474400000,
+                "end": 1727499600000
+            },
+            {
+                "start": 1727816400000,
+                "end": 1727843400000
+            },
+            {
+                "start": 1728079200000,
+                "end": 1728104400000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Lane 1",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 2",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 3",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 4",
+                "status": "NORMAL"
+            }
+        ],
+        "fullClosure": false,
+        "additionalInfo": false
+    },
+    {
+        "eventId": "5034337",
+        "description": null,
+        "cause": "M25 Anticlockwise Jct 31 to Jct 30\nCarriageway closure for gully works\nDiversion via Local Authority roads and National Highways network",
+        "severity": "LOW",
+        "roadName": "M25",
+        "isCompleted": false,
+        "isConfirmed": false,
+        "location": {
+            "latitude": 51.47933,
+            "longitude": 0.2663061,
+            "junctionUpstream": "J1A",
+            "junctionDownstream": "J30|31"
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1727126490396,
+        "startDate": 1727730000000,
+        "endDate": 1728532800000,
+        "periods": [
+            {
+                "start": 1727730000000,
+                "end": 1727755200000
+            },
+            {
+                "start": 1727816400000,
+                "end": 1727841600000
+            },
+            {
+                "start": 1727902800000,
+                "end": 1727928000000
+            },
+            {
+                "start": 1727989200000,
+                "end": 1728014400000
+            },
+            {
+                "start": 1728079200000,
+                "end": 1728104400000
+            },
+            {
+                "start": 1728334800000,
+                "end": 1728360000000
+            },
+            {
+                "start": 1728507600000,
+                "end": 1728532800000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Lane 1",
+                "status": "NORMAL"
+            },
+            {
+                "laneName": "Lane 2",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 3",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 4",
+                "status": "CLOSED"
+            }
+        ],
+        "fullClosure": false,
+        "additionalInfo": false
+    },
+    {
+        "eventId": "5034335",
+        "description": null,
+        "cause": "M25 Anticlockwise Jct 31 to Jct 30\nCarriageway closure for gully works\nDiversion via Local Authority roads and National Highways network",
+        "severity": "MEDIUM",
+        "roadName": "M25",
+        "isCompleted": false,
+        "isConfirmed": false,
+        "location": {
+            "latitude": 51.4839,
+            "longitude": 0.2670315,
+            "junctionUpstream": "J1A",
+            "junctionDownstream": "J30|31"
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1727126481743,
+        "startDate": 1727730000000,
+        "endDate": 1728532800000,
+        "periods": [
+            {
+                "start": 1727730000000,
+                "end": 1727755200000
+            },
+            {
+                "start": 1727816400000,
+                "end": 1727841600000
+            },
+            {
+                "start": 1727902800000,
+                "end": 1727928000000
+            },
+            {
+                "start": 1727989200000,
+                "end": 1728014400000
+            },
+            {
+                "start": 1728079200000,
+                "end": 1728104400000
+            },
+            {
+                "start": 1728334800000,
+                "end": 1728360000000
+            },
+            {
+                "start": 1728507600000,
+                "end": 1728532800000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Hard Shoulder",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 1",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 2",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 3",
+                "status": "CLOSED"
+            }
+        ],
+        "fullClosure": true,
+        "additionalInfo": false
+    }
+]
