@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DFD Crossing Current Congestion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2%;
+        }
+        h1 {
+            text-align: center;
+        }
+        .roadwork {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .roadwork h2 {
+            margin-top: 0;
+        }
+        .severity {
+            font-weight: bold;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .severity-low {
+            background-color: green;
+        }
+        .severity-medium {
+            background-color: orange;
+        }
+        .severity-high {
+            background-color: red;
+        }
+        .lane-closures {
+            display: flex;
+            margin-top: 10px;
+        }
+        .lane {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            border-radius: 4px;
+            display: inline-block;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+            font-size: 14px;
+        }
+        .lane-closed {
+            background-color: red;
+        }
+        .lane-open {
+            background-color: green;
+        }
+        .lane-unknown {
+            background-color: grey;
+        }
+        .events {
+            margin-top: 10px;
+        }
+        .events ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        /* Footer styling */
+        .footer {
+            color: #000000;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer a {
+            color: #000000;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>DFD Crossing Expected Roadworks</h1>
+
+    <div id="roadworks-container"></div>
+
+    <script>
+        // URL of the JSON data
+        const jsonUrl = 'https://crossingwatch.co.uk/data/output.json'; // Replace with your actual JSON URL or local path
+
+        // Function to fetch and display roadworks data
+        async function loadAndDisplayRoadworks() {
+            try {
+                // Fetch the JSON data
+                const response = await fetch(jsonUrl);
+                const data = await response.json();
+
+                // Get the container to add roadwork sections
+                const container = document.getElementById('roadworks-container');
+
+                // Loop through each roadwork event and add to the container
+                data.forEach(event => {
+                    const roadworkDiv = document.createElement('div');
+                    roadworkDiv.className = 'roadwork';
+
+                    // Create the HTML structure for each roadwork event
+                    roadworkDiv.innerHTML = `
+                        <h2>Roadworks from Junction ${event.location.junctionUpstream}</h2>
+                        <p>${timeUntil(event.periods[0].start)}, closures will occur ${event.periods.length} times</p>
+                        <p>Between ${event.location.junctionUpstream} and ${event.location.junctionDownstream}</p>
+                        <p><strong>Severity:</strong> <span class="severity ${getSeverityClass(event.severity)}">${event.severity || 'N/A'}</span></p>
+                        <p><div class="lane-closures"><strong>Lane Closures:</strong>${generateLaneClosures(event.laneClosures)}</div></p>
+                        <p><strong>Last Updated:</strong> ${new Date(event.lastUpdated).toLocaleString() || 'Unknown'}
+                        <p><strong>Reason:</strong> ${event.cause || 'No information has been provided'}</p>
+                        <p><strong>Period:</strong> ${formatPeriods(event.periods)}</p>
+                        <p><a href="https://www.google.com/maps/search/?api=1&query=${event.location.latitude},${event.location.longitude}">Location</a>
+                    `;
+
+                    // Add the roadwork div to the container
+                    container.appendChild(roadworkDiv);
+                });
+
+            } catch (error) {
+                console.error('Error loading or processing data:', error);
+            }
+        }
+
+        // Helper function to format periods
+        function formatPeriods(periods) {
+            return periods.map(period => {
+                const start = new Date(period.start).toLocaleString();
+                const end = new Date(period.end).toLocaleString();
+                return `From ${start} to ${end}`;
+            }).join('<br>');
+        }
+
+        // Helper function to get CSS class for severity
+        function getSeverityClass(severity) {
+            switch (severity) {
+                case 'HIGHEST':
+                    return 'severity-high';
+                case 'MEDIUM':
+                    return 'severity-medium';
+                case 'LOW':
+                    return 'severity-low';
+                default:
+                    return 'severity-low';
+            }
+        }
+
+        // Helper function to generate lane closures
+        function generateLaneClosures(laneClosures) {
+            return laneClosures.map(lane => {
+                const className = lane.status === 'CLOSED' ? 'lane-closed' : lane.status === 'NORMAL' ? 'lane-open' : 'lane-unknown';
+                return `<div class="lane ${className}">${lane.laneName.slice(-1)}</div>`;
+            }).join('');
+        }
+
+        // Helper function that produces time until text
+        function timeUntil(unixTime) {
+            // Convert the Unix timestamp from seconds to milliseconds
+            const targetTime = unixTime;
+            
+            // Get the current time in milliseconds
+            const now = Date.now();
+            
+            // Calculate the difference in milliseconds
+            const difference = targetTime - now;
+            
+            // If the difference is negative, the time has already passed
+            if (difference <= 0) {
+                return "🛑 Currently in progress (hypothetically)";
+            }
+
+            // Calculate the difference in days and hours
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            
+            // Handle the output format
+            if (days > 0) {
+                return `Beginning in ${days} days and ${hours} hours`;
+            } else {
+                return `Beginning in ${hours} hours`;
+            }
+        }
+
+        // Load and display the roadworks data when the page loads
+        document.addEventListener('DOMContentLoaded', loadAndDisplayRoadworks);
+    </script>
+
+</body>
+
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+        <p>
+            <a href="/privacy-policy">Privacy Policy</a> |
+            <a href="/terms-of-service">Terms of Service</a> |
+            <a href="/contact">Contact Us</a>
+        </p>
+        <p>Verify information with a secondary source.</p>
+    </div>
+</footer>
+
+</html>
