@@ -1,1 +1,93 @@
-[]
+[
+    {
+        "eventId": "5092917",
+        "description": null,
+        "cause": "A2 both directions Bexleyheath to Pepperhill\nA282 southbound Princes Road to Darenth\nM25 both directions Jct 2 to Jct 3\nSlip road, lane closure and diversion for bridge works",
+        "severity": "LOW",
+        "roadName": "M25",
+        "isCompleted": false,
+        "isConfirmed": false,
+        "location": {
+            "latitude": 51.459805,
+            "longitude": 0.25409186,
+            "junctionUpstream": "J1A",
+            "junctionDownstream": "J1B|2"
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1730832357237,
+        "startDate": 1730757600000,
+        "endDate": 1731132000000,
+        "periods": [
+            {
+                "start": 1730757600000,
+                "end": 1730786400000
+            },
+            {
+                "start": 1730844000000,
+                "end": 1730872800000
+            },
+            {
+                "start": 1730930400000,
+                "end": 1730959200000
+            },
+            {
+                "start": 1731016800000,
+                "end": 1731045600000
+            },
+            {
+                "start": 1731103200000,
+                "end": 1731132000000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Lane 1",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 2",
+                "status": "NORMAL"
+            },
+            {
+                "laneName": "Lane 3",
+                "status": "NORMAL"
+            },
+            {
+                "laneName": "Lane 4",
+                "status": "NORMAL"
+            }
+        ],
+        "fullClosure": false,
+        "additionalInfo": false
+    },
+    {
+        "eventId": "5092914",
+        "description": null,
+        "cause": "",
+        "severity": "LOW",
+        "roadName": "M25",
+        "isCompleted": false,
+        "isConfirmed": false,
+        "location": {
+            "latitude": 51.459805,
+            "longitude": 0.25409186,
+            "junctionUpstream": "J1A",
+            "junctionDownstream": "J1B|2"
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1730828882636,
+        "startDate": 1730756916005,
+        "endDate": 1731132000000,
+        "periods": [
+            {
+                "start": 1730756916005,
+                "end": 1731132000000
+            }
+        ],
+        "laneClosures": [],
+        "fullClosure": false,
+        "additionalInfo": false
+    }
+]
