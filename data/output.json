@@ -1042,6 +1042,44 @@
         "additionalInfo": false
     },
     {
+        "eventId": "5110208",
+        "description": null,
+        "cause": "",
+        "severity": "HIGHEST",
+        "roadName": "M25",
+        "isCompleted": false,
+        "isConfirmed": true,
+        "location": {
+            "latitude": 51.460052,
+            "longitude": 0.2524531,
+            "junctionUpstream": "",
+            "junctionDownstream": ""
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1731016172393,
+        "startDate": 1731015965162,
+        "endDate": 1731043800000,
+        "periods": [
+            {
+                "start": 1731015965162,
+                "end": 1731043800000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Lane 1",
+                "status": "UNKNOWN"
+            },
+            {
+                "laneName": "Lane 2",
+                "status": "UNKNOWN"
+            }
+        ],
+        "fullClosure": false,
+        "additionalInfo": false
+    },
+    {
         "eventId": "5092917",
         "description": null,
         "cause": "A2 both directions Bexleyheath to Pepperhill\nA282 southbound Princes Road to Darenth\nM25 both directions Jct 2 to Jct 3\nSlip road, lane closure and diversion for bridge works",
