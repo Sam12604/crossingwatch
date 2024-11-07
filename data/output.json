@@ -61,7 +61,7 @@
         "eventId": "5092916",
         "description": null,
         "cause": "A2 both directions Bexleyheath to Pepperhill\nA282 southbound Princes Road to Darenth\nM25 both directions Jct 2 to Jct 3\nSlip road, lane closure and diversion for bridge works",
-        "severity": "LOW",
+        "severity": "MEDIUM",
         "roadName": "M25",
         "isCompleted": false,
         "isConfirmed": false,
@@ -73,7 +73,7 @@
         },
         "eventType": "ROADWORKS",
         "isCurrent": false,
-        "lastUpdated": 1730930464730,
+        "lastUpdated": 1730958615344,
         "startDate": 1730930400000,
         "endDate": 1731132000000,
         "periods": [
@@ -360,48 +360,10 @@
         "additionalInfo": false
     },
     {
-        "eventId": "5108078",
-        "description": null,
-        "cause": "",
-        "severity": "HIGHEST",
-        "roadName": "M25",
-        "isCompleted": false,
-        "isConfirmed": true,
-        "location": {
-            "latitude": 51.452652,
-            "longitude": 0.24066177,
-            "junctionUpstream": "",
-            "junctionDownstream": ""
-        },
-        "eventType": "ROADWORKS",
-        "isCurrent": false,
-        "lastUpdated": 1730929885962,
-        "startDate": 1730929840798,
-        "endDate": 1730957400000,
-        "periods": [
-            {
-                "start": 1730929840798,
-                "end": 1730957400000
-            }
-        ],
-        "laneClosures": [
-            {
-                "laneName": "Lane 1",
-                "status": "CLOSED"
-            },
-            {
-                "laneName": "Lane 2",
-                "status": "CLOSED"
-            }
-        ],
-        "fullClosure": true,
-        "additionalInfo": false
-    },
-    {
         "eventId": "5080502",
         "description": null,
         "cause": "A282 anticlockwise Jct 1A to M25 Anticlockwise Jct 31 \nWest Tunnel closure for grillage Works. \nDiversion via National Highways roads",
-        "severity": "HIGHEST",
+        "severity": "MEDIUM",
         "roadName": "M25",
         "isCompleted": false,
         "isConfirmed": false,
@@ -413,8 +375,8 @@
         },
         "eventType": "ROADWORKS",
         "isCurrent": false,
-        "lastUpdated": 1730930436727,
-        "startDate": 1730930400000,
+        "lastUpdated": 1730957490295,
+        "startDate": 1731016800000,
         "endDate": 1731132000000,
         "periods": [
             {
@@ -581,8 +543,8 @@
         },
         "eventType": "ROADWORKS",
         "isCurrent": false,
-        "lastUpdated": 1730930441618,
-        "startDate": 1730930400000,
+        "lastUpdated": 1730957601231,
+        "startDate": 1731016800000,
         "endDate": 1731132000000,
         "periods": [
             {
@@ -651,8 +613,8 @@
         },
         "eventType": "ROADWORKS",
         "isCurrent": false,
-        "lastUpdated": 1730930439093,
-        "startDate": 1730930400000,
+        "lastUpdated": 1730957601090,
+        "startDate": 1731016800000,
         "endDate": 1731132000000,
         "periods": [
             {
@@ -694,44 +656,6 @@
             {
                 "start": 1731106800000,
                 "end": 1731132000000
-            }
-        ],
-        "laneClosures": [
-            {
-                "laneName": "Lane 1",
-                "status": "CLOSED"
-            },
-            {
-                "laneName": "Lane 2",
-                "status": "CLOSED"
-            }
-        ],
-        "fullClosure": true,
-        "additionalInfo": false
-    },
-    {
-        "eventId": "5106995",
-        "description": null,
-        "cause": "A282 Southbound Jct 31 to Jct 1A and A282 Southbound Jct 1A to Jct 2 \nLane, Slip road and Carriageway closure for Urgent safety fence repairs \nDiversion via Local Authorities \n",
-        "severity": "HIGHEST",
-        "roadName": "M25",
-        "isCompleted": false,
-        "isConfirmed": false,
-        "location": {
-            "latitude": 51.451828,
-            "longitude": 0.24369988,
-            "junctionUpstream": "",
-            "junctionDownstream": ""
-        },
-        "eventType": "ROADWORKS",
-        "isCurrent": false,
-        "lastUpdated": 1730931023149,
-        "startDate": 1730930400000,
-        "endDate": 1730955600000,
-        "periods": [
-            {
-                "start": 1730930400000,
-                "end": 1730955600000
             }
         ],
         "laneClosures": [
@@ -918,56 +842,10 @@
         "additionalInfo": false
     },
     {
-        "eventId": "5106994",
-        "description": null,
-        "cause": "A282 Southbound Jct 31 to Jct 1A and A282 Southbound Jct 1A to Jct 2 \nLane, Slip road and Carriageway closure for Urgent safety fence repairs \nDiversion via Local Authorities \n",
-        "severity": "HIGHEST",
-        "roadName": "M25",
-        "isCompleted": false,
-        "isConfirmed": false,
-        "location": {
-            "latitude": 51.454895,
-            "longitude": 0.24607685,
-            "junctionUpstream": "J1A",
-            "junctionDownstream": "J1B|2"
-        },
-        "eventType": "ROADWORKS",
-        "isCurrent": false,
-        "lastUpdated": 1730930484961,
-        "startDate": 1730930400000,
-        "endDate": 1730955600000,
-        "periods": [
-            {
-                "start": 1730930400000,
-                "end": 1730955600000
-            }
-        ],
-        "laneClosures": [
-            {
-                "laneName": "Lane 1",
-                "status": "CLOSED"
-            },
-            {
-                "laneName": "Lane 2",
-                "status": "CLOSED"
-            },
-            {
-                "laneName": "Lane 3",
-                "status": "CLOSED"
-            },
-            {
-                "laneName": "Lane 4",
-                "status": "CLOSED"
-            }
-        ],
-        "fullClosure": true,
-        "additionalInfo": false
-    },
-    {
         "eventId": "5080506",
         "description": null,
         "cause": "A282 anticlockwise Jct 1A to M25 Anticlockwise Jct 31 \nWest Tunnel closure for grillage Works. \nDiversion via National Highways roads",
-        "severity": "HIGHEST",
+        "severity": "LOW",
         "roadName": "M25",
         "isCompleted": false,
         "isConfirmed": false,
@@ -979,8 +857,8 @@
         },
         "eventType": "ROADWORKS",
         "isCurrent": false,
-        "lastUpdated": 1730930444130,
-        "startDate": 1730930400000,
+        "lastUpdated": 1730957618133,
+        "startDate": 1731016800000,
         "endDate": 1731130200000,
         "periods": [
             {
@@ -1129,44 +1007,6 @@
         "additionalInfo": false
     },
     {
-        "eventId": "5108080",
-        "description": null,
-        "cause": "",
-        "severity": "HIGHEST",
-        "roadName": "M25",
-        "isCompleted": false,
-        "isConfirmed": true,
-        "location": {
-            "latitude": 51.466293,
-            "longitude": 0.25883642,
-            "junctionUpstream": "",
-            "junctionDownstream": ""
-        },
-        "eventType": "ROADWORKS",
-        "isCurrent": false,
-        "lastUpdated": 1730930038522,
-        "startDate": 1730929934008,
-        "endDate": 1730957400000,
-        "periods": [
-            {
-                "start": 1730929934008,
-                "end": 1730957400000
-            }
-        ],
-        "laneClosures": [
-            {
-                "laneName": "Lane 1",
-                "status": "UNKNOWN"
-            },
-            {
-                "laneName": "Lane 2",
-                "status": "UNKNOWN"
-            }
-        ],
-        "fullClosure": false,
-        "additionalInfo": false
-    },
-    {
         "eventId": "5108104",
         "description": null,
         "cause": "A282 Clockwise Jct 31 to Jct 1A\nLane closure for caballing works.",
@@ -1205,52 +1045,6 @@
             {
                 "start": 1732053600000,
                 "end": 1732078800000
-            }
-        ],
-        "laneClosures": [
-            {
-                "laneName": "Lane 1",
-                "status": "NORMAL"
-            },
-            {
-                "laneName": "Lane 2",
-                "status": "CLOSED"
-            },
-            {
-                "laneName": "Lane 3",
-                "status": "CLOSED"
-            },
-            {
-                "laneName": "Lane 4",
-                "status": "CLOSED"
-            }
-        ],
-        "fullClosure": false,
-        "additionalInfo": false
-    },
-    {
-        "eventId": "5106996",
-        "description": null,
-        "cause": "A282 Southbound Jct 31 to Jct 1A and A282 Southbound Jct 1A to Jct 2 \nLane, Slip road and Carriageway closure for Urgent safety fence repairs \nDiversion via Local Authorities \n",
-        "severity": "LOW",
-        "roadName": "M25",
-        "isCompleted": false,
-        "isConfirmed": false,
-        "location": {
-            "latitude": 51.47924,
-            "longitude": 0.26665917,
-            "junctionUpstream": "J30|31",
-            "junctionDownstream": "J1A"
-        },
-        "eventType": "ROADWORKS",
-        "isCurrent": false,
-        "lastUpdated": 1730930484499,
-        "startDate": 1730930400000,
-        "endDate": 1730955600000,
-        "periods": [
-            {
-                "start": 1730930400000,
-                "end": 1730955600000
             }
         ],
         "laneClosures": [
