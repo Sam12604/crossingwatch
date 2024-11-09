@@ -442,44 +442,6 @@
         "additionalInfo": false
     },
     {
-        "eventId": "5111962",
-        "description": null,
-        "cause": "",
-        "severity": "HIGHEST",
-        "roadName": "M25",
-        "isCompleted": false,
-        "isConfirmed": true,
-        "location": {
-            "latitude": 51.452663,
-            "longitude": 0.24109879,
-            "junctionUpstream": "",
-            "junctionDownstream": ""
-        },
-        "eventType": "ROADWORKS",
-        "isCurrent": false,
-        "lastUpdated": 1731106291353,
-        "startDate": 1731106241527,
-        "endDate": 1731132000000,
-        "periods": [
-            {
-                "start": 1731106241527,
-                "end": 1731132000000
-            }
-        ],
-        "laneClosures": [
-            {
-                "laneName": "Lane 1",
-                "status": "CLOSED"
-            },
-            {
-                "laneName": "Lane 2",
-                "status": "CLOSED"
-            }
-        ],
-        "fullClosure": true,
-        "additionalInfo": false
-    },
-    {
         "eventId": "5080502",
         "description": null,
         "cause": "A282 anticlockwise Jct 1A to M25 Anticlockwise Jct 31 \nWest Tunnel closure for grillage Works. \nDiversion via National Highways roads",
@@ -962,80 +924,6 @@
         "additionalInfo": false
     },
     {
-        "eventId": "5080506",
-        "description": null,
-        "cause": "A282 anticlockwise Jct 1A to M25 Anticlockwise Jct 31 \nWest Tunnel closure for grillage Works. \nDiversion via National Highways roads",
-        "severity": "HIGHEST",
-        "roadName": "M25",
-        "isCompleted": false,
-        "isConfirmed": false,
-        "location": {
-            "latitude": 51.45659,
-            "longitude": 0.24733683,
-            "junctionUpstream": "",
-            "junctionDownstream": ""
-        },
-        "eventType": "ROADWORKS",
-        "isCurrent": false,
-        "lastUpdated": 1731103214152,
-        "startDate": 1731103200000,
-        "endDate": 1731130200000,
-        "periods": [
-            {
-                "start": 1730152800000,
-                "end": 1730179800000
-            },
-            {
-                "start": 1730239200000,
-                "end": 1730266200000
-            },
-            {
-                "start": 1730325600000,
-                "end": 1730352600000
-            },
-            {
-                "start": 1730412000000,
-                "end": 1730439000000
-            },
-            {
-                "start": 1730498400000,
-                "end": 1730525400000
-            },
-            {
-                "start": 1730757600000,
-                "end": 1730784600000
-            },
-            {
-                "start": 1730844000000,
-                "end": 1730871000000
-            },
-            {
-                "start": 1730930400000,
-                "end": 1730957400000
-            },
-            {
-                "start": 1731016800000,
-                "end": 1731043800000
-            },
-            {
-                "start": 1731103200000,
-                "end": 1731130200000
-            }
-        ],
-        "laneClosures": [
-            {
-                "laneName": "Lane 1",
-                "status": "CLOSED"
-            },
-            {
-                "laneName": "Lane 2",
-                "status": "CLOSED"
-            }
-        ],
-        "fullClosure": true,
-        "additionalInfo": false
-    },
-    {
         "eventId": "5092914",
         "description": null,
         "cause": "",
@@ -1105,44 +993,6 @@
             {
                 "laneName": "Lane 4",
                 "status": "NORMAL"
-            }
-        ],
-        "fullClosure": false,
-        "additionalInfo": false
-    },
-    {
-        "eventId": "5111964",
-        "description": null,
-        "cause": "",
-        "severity": "HIGHEST",
-        "roadName": "M25",
-        "isCompleted": false,
-        "isConfirmed": true,
-        "location": {
-            "latitude": 51.46715,
-            "longitude": 0.25960228,
-            "junctionUpstream": "",
-            "junctionDownstream": ""
-        },
-        "eventType": "ROADWORKS",
-        "isCurrent": false,
-        "lastUpdated": 1731106395618,
-        "startDate": 1731106336503,
-        "endDate": 1731132000000,
-        "periods": [
-            {
-                "start": 1731106336503,
-                "end": 1731132000000
-            }
-        ],
-        "laneClosures": [
-            {
-                "laneName": "Lane 1",
-                "status": "UNKNOWN"
-            },
-            {
-                "laneName": "Lane 2",
-                "status": "UNKNOWN"
             }
         ],
         "fullClosure": false,
