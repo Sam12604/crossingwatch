@@ -664,44 +664,6 @@
         "additionalInfo": false
     },
     {
-        "eventId": "5112641",
-        "description": null,
-        "cause": "",
-        "severity": "HIGHEST",
-        "roadName": "M25",
-        "isCompleted": false,
-        "isConfirmed": true,
-        "location": {
-            "latitude": 51.466114,
-            "longitude": 0.25902462,
-            "junctionUpstream": "J1A",
-            "junctionDownstream": "J30|31"
-        },
-        "eventType": "ROADWORKS",
-        "isCurrent": false,
-        "lastUpdated": 1731189385695,
-        "startDate": 1731189205066,
-        "endDate": 1731216600000,
-        "periods": [
-            {
-                "start": 1731189205066,
-                "end": 1731216600000
-            }
-        ],
-        "laneClosures": [
-            {
-                "laneName": "Lane 1",
-                "status": "UNKNOWN"
-            },
-            {
-                "laneName": "Lane 2",
-                "status": "UNKNOWN"
-            }
-        ],
-        "fullClosure": false,
-        "additionalInfo": false
-    },
-    {
         "eventId": "5108104",
         "description": null,
         "cause": "A282 Clockwise Jct 31 to Jct 1A\nLane closure for caballing works.",
