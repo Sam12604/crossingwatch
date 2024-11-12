@@ -80,6 +80,78 @@
         "additionalInfo": false
     },
     {
+        "eventId": "5116438",
+        "description": null,
+        "cause": "A2 Westbound Jct M25 to Jct Dartford Heath\nLane closures and Entry slip road closure for cat 1 carriageway repairs\nDiversion via National Highways Network",
+        "severity": "LOW",
+        "roadName": "M25",
+        "isCompleted": false,
+        "isConfirmed": false,
+        "location": {
+            "latitude": 51.423016,
+            "longitude": 0.23581792,
+            "junctionUpstream": "",
+            "junctionDownstream": ""
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1731406436767,
+        "startDate": 1731448800000,
+        "endDate": 1731474000000,
+        "periods": [
+            {
+                "start": 1731448800000,
+                "end": 1731474000000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Lane 1",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 2",
+                "status": "NORMAL"
+            }
+        ],
+        "fullClosure": false,
+        "additionalInfo": false
+    },
+    {
+        "eventId": "5116436",
+        "description": null,
+        "cause": "A2 Westbound Jct M25 to Jct Dartford Heath\nLane closures and Entry slip road closure for cat 1 carriageway repairs\nDiversion via National Highways Network",
+        "severity": "MEDIUM",
+        "roadName": "A2",
+        "isCompleted": false,
+        "isConfirmed": false,
+        "location": {
+            "latitude": 51.424347,
+            "longitude": 0.23676036,
+            "junctionUpstream": "",
+            "junctionDownstream": ""
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1731406406732,
+        "startDate": 1731448800000,
+        "endDate": 1731474000000,
+        "periods": [
+            {
+                "start": 1731448800000,
+                "end": 1731474000000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Lane 1",
+                "status": "CLOSED"
+            }
+        ],
+        "fullClosure": true,
+        "additionalInfo": false
+    },
+    {
         "eventId": "5111977",
         "description": null,
         "cause": "M25 Anti-Clockwise Jct 2 exit slip road and fast link\nLane, slip road and link road closure for routine works, \nDiversion via National Highways roads",
@@ -111,6 +183,86 @@
             }
         ],
         "fullClosure": true,
+        "additionalInfo": false
+    },
+    {
+        "eventId": "5116437",
+        "description": null,
+        "cause": "A2 Westbound Jct M25 to Jct Dartford Heath\nLane closures and Entry slip road closure for cat 1 carriageway repairs\nDiversion via National Highways Network",
+        "severity": "HIGHEST",
+        "roadName": "A2",
+        "isCompleted": false,
+        "isConfirmed": false,
+        "location": {
+            "latitude": 51.42548,
+            "longitude": 0.23665757,
+            "junctionUpstream": "",
+            "junctionDownstream": ""
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1731406416737,
+        "startDate": 1731448800000,
+        "endDate": 1731474000000,
+        "periods": [
+            {
+                "start": 1731448800000,
+                "end": 1731474000000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Lane 1",
+                "status": "CLOSED"
+            }
+        ],
+        "fullClosure": true,
+        "additionalInfo": false
+    },
+    {
+        "eventId": "5116439",
+        "description": null,
+        "cause": "A2 Westbound Jct M25 to Jct Dartford Heath\nLane closures and Entry slip road closure for cat 1 carriageway repairs\nDiversion via National Highways Network",
+        "severity": "LOW",
+        "roadName": "A2",
+        "isCompleted": false,
+        "isConfirmed": false,
+        "location": {
+            "latitude": 51.426296,
+            "longitude": 0.23905379,
+            "junctionUpstream": "B255",
+            "junctionDownstream": "M25 J1B|J2"
+        },
+        "eventType": "ROADWORKS",
+        "isCurrent": false,
+        "lastUpdated": 1731406436819,
+        "startDate": 1731448800000,
+        "endDate": 1731474000000,
+        "periods": [
+            {
+                "start": 1731448800000,
+                "end": 1731474000000
+            }
+        ],
+        "laneClosures": [
+            {
+                "laneName": "Hard Shoulder",
+                "status": "NORMAL"
+            },
+            {
+                "laneName": "Lane 1",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 2",
+                "status": "CLOSED"
+            },
+            {
+                "laneName": "Lane 3",
+                "status": "NORMAL"
+            }
+        ],
+        "fullClosure": false,
         "additionalInfo": false
     },
     {
