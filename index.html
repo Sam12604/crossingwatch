@@ -153,9 +153,9 @@
                     const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
                     if (days > 0) {
-                        return `Currently in progress, ending in ${days} days and ${hours} hours`;
+                        return `❌ Currently in progress, ending in ${days} days and ${hours} hours`;
                     } else {
-                        return `Currently in progress, ending in ${hours} hours`;
+                        return `❌ Currently in progress, ending in ${hours} hours`;
                     }
                 }
 
