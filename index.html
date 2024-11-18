@@ -36,46 +36,76 @@
     <div id="roadworks-container"></div>
 
     <script>
-        // URL of the JSON data
-        const jsonUrl = 'https://source.crossingwatch.co.uk/data/output.json'; // Replace with your actual JSON URL or local path
-
-        // Function to fetch and display roadworks data
+        const jsonUrl = 'https://source.crossingwatch.co.uk/data/output.json';
+    
         async function loadAndDisplayRoadworks() {
             try {
-                // Fetch the JSON data
                 const response = await fetch(jsonUrl);
                 const data = await response.json();
-
-                // Get the container to add roadwork sections
+    
+                // Sort the roadworks by the starting time of the first period
+                data.sort((a, b) => a.periods[0].start - b.periods[0].start);
+    
+                // Filter events into categories
+                const now = Date.now();
+                const todayEnd = new Date().setHours(23, 59, 59, 999);
+    
+                const currentlyInProgress = data.filter(event => event.periods[0].start <= now && event.periods[0].end >= now);
+                const startingToday = data.filter(event => event.periods[0].start > now && event.periods[0].start <= todayEnd);
+                const startingThisWeek = data.filter(event => event.periods[0].start > todayEnd && event.periods[0].start <= todayEnd + 6 * 24 * 60 * 60 * 1000);
+                const startingLater = data.filter(event => event.periods[0].start > todayEnd + 6 * 24 * 60 * 60 * 1000);
+    
+                // Get the container and clear its content
                 const container = document.getElementById('roadworks-container');
-
-                // Loop through each roadwork event and add to the container
-                data.forEach(event => {
-                    const roadworkDiv = document.createElement('div');
-                    roadworkDiv.className = 'roadwork';
-
-                    // Create the HTML structure for each roadwork event
-                    roadworkDiv.innerHTML = `
-                        <h2>Roadworks from Junction ${event.location.junctionUpstream}</h2>
-                        <p>${timeUntil(event.periods[0].start)}, closures will occur ${event.periods.length} times</p>
-                        <p>Between ${event.location.junctionUpstream} and ${event.location.junctionDownstream}</p>
-                        <p><strong>Severity:</strong> <span class="severity ${getSeverityClass(event.severity)}">${event.severity || 'N/A'}</span></p>
-                        <p><div class="lane-closures"><strong>Lane Closures:</strong>${generateLaneClosures(event.laneClosures)}</div></p>
-                        <p><strong>Last Updated:</strong> ${new Date(event.lastUpdated).toLocaleString() || 'Unknown'}
-                        <p><strong>Reason:</strong> ${event.cause || 'No information has been provided'}</p>
-                        <p><strong>Period:</strong> ${formatPeriods(event.periods)}</p>
-                        <p><a href="https://www.google.com/maps/search/?api=1&query=${event.location.latitude},${event.location.longitude}">Location</a>
-                    `;
-
-                    // Add the roadwork div to the container
-                    container.appendChild(roadworkDiv);
-                });
-
+                container.innerHTML = '';
+    
+                // Render sections with headers
+                renderSection(container, 'Currently in Progress', currentlyInProgress);
+                renderSection(container, 'Starting Today', startingToday);
+                renderSection(container, 'Starting This Week', startingThisWeek);
+                renderSection(container, 'Starting Later', startingLater);
+    
             } catch (error) {
                 console.error('Error loading or processing data:', error);
             }
         }
-
+    
+        // Function to render a section with a header and events
+        function renderSection(container, title, events) {
+            const sectionDiv = document.createElement('div');
+            sectionDiv.className = 'section';
+    
+            const header = document.createElement('h2');
+            header.textContent = title;
+            sectionDiv.appendChild(header);
+    
+            if (events.length === 0) {
+                const noEvents = document.createElement('p');
+                noEvents.textContent = 'No current roadworks events.';
+                sectionDiv.appendChild(noEvents);
+            } else {
+                events.forEach(event => {
+                    const roadworkDiv = document.createElement('div');
+                    roadworkDiv.className = 'roadwork';
+    
+                    roadworkDiv.innerHTML = `
+                        <h3>Roadworks from Junction ${event.location.junctionUpstream}</h3>
+                        <p>${timeUntil(event.periods)}, closures will occur ${event.periods.length} times</p>
+                        <p>Between ${event.location.junctionUpstream} and ${event.location.junctionDownstream}</p>
+                        <p><strong>Severity:</strong> <span class="severity ${getSeverityClass(event.severity)}">${event.severity || 'N/A'}</span></p>
+                        <p><div class="lane-closures"><strong>Lane Closures:</strong>${generateLaneClosures(event.laneClosures)}</div></p>
+                        <p><strong>Last Updated:</strong> ${new Date(event.lastUpdated).toLocaleString() || 'Unknown'}</p>
+                        <p><strong>Reason:</strong> ${event.cause || 'No information has been provided'}</p>
+                        <p><strong>Period:</strong> ${formatPeriods(event.periods)}</p>
+                        <p><a href="https://www.google.com/maps/search/?api=1&query=${event.location.latitude},${event.location.longitude}">Location</a></p>
+                    `;
+                    sectionDiv.appendChild(roadworkDiv);
+                });
+            }
+    
+            container.appendChild(sectionDiv);
+        }
+    
         // Helper function to format periods
         function formatPeriods(periods) {
             return periods.map(period => {
@@ -84,7 +114,7 @@
                 return `From ${start} to ${end}`;
             }).join('<br>');
         }
-
+    
         // Helper function to get CSS class for severity
         function getSeverityClass(severity) {
             switch (severity) {
@@ -98,7 +128,7 @@
                     return 'severity-low';
             }
         }
-
+    
         // Helper function to generate lane closures
         function generateLaneClosures(laneClosures) {
             return laneClosures.map(lane => {
@@ -106,45 +136,54 @@
                 return `<div class="lane ${className}">${lane.laneName.slice(-1)}</div>`;
             }).join('');
         }
-
+    
         // Helper function that produces time until text
-        function timeUntil(unixTime) {
-            // Convert the Unix timestamp from seconds to milliseconds
-            const targetTime = unixTime;
-            
-            // Get the current time in milliseconds
+        function timeUntil(periods) {
             const now = Date.now();
-            
-            // Calculate the difference in milliseconds
-            const difference = targetTime - now;
-            
-            // If the difference is negative, the time has already passed
-            if (difference <= 0) {
-                return "🛑 Currently in progress (hypothetically)";
+
+            // Loop through each period and check if it overlaps with the current time
+            for (const period of periods) {
+                const start = new Date(period.start).getTime();
+                const end = new Date(period.end).getTime();
+
+                // If the current time is within the period, consider it "in progress"
+                if (now >= start && now <= end) {
+                    const remainingTime = end - now;
+                    const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+                    if (days > 0) {
+                        return `Currently in progress, ending in ${days} days and ${hours} hours`;
+                    } else {
+                        return `Currently in progress, ending in ${hours} hours`;
+                    }
+                }
+
+                // If the period hasn't started yet, show the time until it begins
+                if (now < start) {
+                    const remainingTime = start - now;
+                    const hours = Math.floor(remainingTime / (1000 * 60 * 60));
+
+                    return `Not currently in progress, beginning in ${hours} hours`;
+                }
             }
 
-            // Calculate the difference in days and hours
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            
-            // Handle the output format
-            if (days > 0) {
-                return `Beginning in ${days} days and ${hours} hours`;
-            } else {
-                return `Beginning in ${hours} hours`;
-            }
+            // If no periods are active or starting soon
+            return "No ongoing roadworks at the moment.";
         }
 
-        // Load and display the roadworks data when the page loads
+    
         document.addEventListener('DOMContentLoaded', loadAndDisplayRoadworks);
     </script>
+    
+    
 
 </body>
 
 <footer class="footer">
     <script>
             window.addEventListener('load', () => {
-        fetch('https://crossingwatch.co.uk/src/footer.html')
+        fetch('src/footer.html')
             .then(res => res.text())
             .then(html => document.querySelector('footer').innerHTML = html)
             .catch(err => console.error('Failed to load footer:', err));
