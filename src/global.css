@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 2%;
+}
+h1 {
+    text-align: center;
+}
+.roadwork {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+.roadwork h2 {
+    margin-top: 0;
+}
+.severity {
+    font-weight: bold;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.severity-low {
+    background-color: green;
+}
+.severity-medium {
+    background-color: orange;
+}
+.severity-high {
+    background-color: red;
+}
+.lane-closures {
+    display: flex;
+    margin-top: 10px;
+}
+.lane {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border-radius: 4px;
+    display: inline-block;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    font-size: 14px;
+}
+.lane-closed {
+    background-color: red;
+}
+.lane-open {
+    background-color: green;
+}
+.lane-unknown {
+    background-color: grey;
+}
+.events {
+    margin-top: 10px;
+}
+.events ul {
+    margin: 0;
+    padding-left: 20px;
+}
+/* Footer styling */
+.footer {
+    color: #000000;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer a {
+    color: #000000;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
