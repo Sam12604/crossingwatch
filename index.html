@@ -6,7 +6,7 @@
     <meta name="keywords" content="M25, A282, Dartford Crossing, A282 Roadworks, Dartford Crossing Roadworks, A282 Closures, M25 Closures">
     <meta name="author" content="CrossingWatch">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/global.css">
+    <link rel="stylesheet" href="src/global.css?v=2024.11.21">
     <title>DFD Crossing Expected Roadworks</title>
 </head>
 
@@ -97,15 +97,16 @@
                 events.forEach(event => {
                     const roadworkDiv = document.createElement('div');
                     roadworkDiv.className = 'roadwork';
+                    roadworkDiv.id = event.eventId;
     
                     roadworkDiv.innerHTML = `
-                        <h3>Roadworks from Junction ${event.location.junctionUpstream}</h3>
+                        <h3>Roadworks from Junction ${event.location.junctionUpstream || 'unspecified'} to ${event.location.junctionDownstream || 'unspecified'}</h3>
                         <p>${timeUntil(event.periods)}, closures will occur ${event.periods.length} times</p>
-                        <p>Between ${event.location.junctionUpstream} and ${event.location.junctionDownstream}</p>
+                        <p><strong>Reason:</strong> ${event.cause || 'No information has been provided'}</p>
+                        <!-- <p>Between ${event.location.junctionUpstream} and ${event.location.junctionDownstream}</p> -->
                         <p><strong>Severity:</strong> <span class="severity ${getSeverityClass(event.severity)}">${event.severity || 'N/A'}</span></p>
                         <p><div class="lane-closures"><strong>Lane Closures:</strong>${generateLaneClosures(event.laneClosures)}</div></p>
                         <p><strong>Last Updated:</strong> ${new Date(event.lastUpdated).toLocaleString() || 'Unknown'}</p>
-                        <p><strong>Reason:</strong> ${event.cause || 'No information has been provided'}</p>
                         <p><strong>Period:</strong> ${formatPeriods(event.periods)}</p>
                         <p><a href="https://www.google.com/maps/search/?api=1&query=${event.location.latitude},${event.location.longitude}">Location</a></p>
                     `;
@@ -143,7 +144,7 @@
         function generateLaneClosures(laneClosures) {
             return laneClosures.map(lane => {
                 const className = lane.status === 'CLOSED' ? 'lane-closed' : lane.status === 'NORMAL' ? 'lane-open' : 'lane-unknown';
-                return `<div class="lane ${className}">${lane.laneName.slice(-1)}</div>`;
+                return `<div class="lane ${className}" title="${lane.laneName}">${lane.laneName.slice(-1)}</div>`;
             }).join('');
         }
     
@@ -172,9 +173,15 @@
                 // If the period hasn't started yet, show the time until it begins
                 if (now < start) {
                     const remainingTime = start - now;
+                    const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
                     const hours = Math.floor(remainingTime / (1000 * 60 * 60));
 
-                    return `Not currently in progress, beginning in ${hours} hours`;
+                    
+                    if (days > 0) {
+                        return `Not currently in progress, beginning in ${days} days`;
+                    } else {
+                        return `Not currently in progress, beginning in ${hours} hours`;
+                    }
                 }
             }
 
