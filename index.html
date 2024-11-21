@@ -120,9 +120,9 @@
         // Helper function to format periods
         function formatPeriods(periods) {
             return periods.map(period => {
-                const start = new Date(period.start).toLocaleString();
-                const end = new Date(period.end).toLocaleString();
-                return `From ${start} to ${end}`;
+                const start = new Date(period.start).toLocaleString('en-GB', {month: 'long', day: 'numeric', hour: '2-digit',minute: '2-digit'});
+                const end = new Date(period.end).toLocaleString('en-GB', {month: 'long', day: 'numeric', hour: '2-digit',minute: '2-digit'});
+                return `${start} to ${end}`;
             }).join('<br>');
         }
     
