@@ -57,8 +57,16 @@ h2 {
     background-color: orange;
 }
 
+.severity-med-high {
+    background-color: rgb(255, 94, 0);
+}
+
 .severity-high {
     background-color: red;
+}
+
+.severity-unsure {
+    background-color: grey;
 }
 
 .lane-closures {

@@ -197,12 +197,14 @@
             switch (severity) {
                 case 'HIGHEST':
                     return 'severity-high';
+                case 'HIGH':
+                    return 'severity-med-high';
                 case 'MEDIUM':
                     return 'severity-medium';
                 case 'LOW':
                     return 'severity-low';
                 default:
-                    return 'severity-low';
+                    return 'severity-unsure';
             }
         }
     
