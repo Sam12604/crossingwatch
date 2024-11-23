@@ -52,33 +52,52 @@
             try {
                 const response = await fetch(jsonUrl);
                 const data = await response.json();
-    
+
                 // Sort the roadworks by the starting time of the first period
                 data.sort((a, b) => a.periods[0].start - b.periods[0].start);
-    
-                // Filter events into categories
+
+                // Get the current time and today's end time
                 const now = Date.now();
                 const todayEnd = new Date().setHours(23, 59, 59, 999);
-    
-                const currentlyInProgress = data.filter(event => event.periods[0].start <= now && event.periods[0].end >= now);
-                const startingToday = data.filter(event => event.periods[0].start > now && event.periods[0].start <= todayEnd);
-                const startingThisWeek = data.filter(event => event.periods[0].start > todayEnd && event.periods[0].start <= todayEnd + 6 * 24 * 60 * 60 * 1000);
-                const startingLater = data.filter(event => event.periods[0].start > todayEnd + 6 * 24 * 60 * 60 * 1000);
-    
+
+                // Categorize events by checking all periods
+                const currentlyInProgress = [];
+                const startingToday = [];
+                const startingThisWeek = [];
+                const startingLater = [];
+
+                data.forEach(event => {
+                    const hasCurrentPeriod = event.periods.some(period => period.start <= now && period.end >= now);
+                    const hasFuturePeriodToday = event.periods.some(period => period.start > now && period.start <= todayEnd);
+                    const hasFuturePeriodThisWeek = event.periods.some(period => period.start > todayEnd && period.start <= todayEnd + 6 * 24 * 60 * 60 * 1000);
+                    const hasFuturePeriodLater = event.periods.some(period => period.start > todayEnd + 6 * 24 * 60 * 60 * 1000);
+
+                    if (hasCurrentPeriod) {
+                        currentlyInProgress.push(event);
+                    } else if (hasFuturePeriodToday) {
+                        startingToday.push(event);
+                    } else if (hasFuturePeriodThisWeek) {
+                        startingThisWeek.push(event);
+                    } else if (hasFuturePeriodLater) {
+                        startingLater.push(event);
+                    }
+                });
+
                 // Get the container and clear its content
                 const container = document.getElementById('roadworks-container');
                 container.innerHTML = '';
-    
+
                 // Render sections with headers
                 renderSection(container, 'Currently in Progress', currentlyInProgress);
                 renderSection(container, 'Starting Today', startingToday);
                 renderSection(container, 'Starting This Week', startingThisWeek);
                 renderSection(container, 'Starting Later', startingLater);
-    
+
             } catch (error) {
                 console.error('Error loading or processing data:', error);
             }
         }
+
     
         // Function to render a section with a header and events
         function renderSection(container, title, events) {
@@ -101,8 +120,8 @@
     
                     roadworkDiv.innerHTML = `
                         <h3>Roadworks from Junction ${event.location.junctionUpstream || 'unspecified'} to ${event.location.junctionDownstream || 'unspecified'}</h3>
-                        <p>${timeUntil(event.periods)}, closures will occur ${event.periods.length} times</p>
-                        <p><strong>Reason:</strong> ${event.cause || 'No information has been provided'}</p>
+                        <p><strong>${event.cause || 'No information has been provided'}</strong></p>
+                        <p>${timeUntil(event.periods)}, closures occuring ${event.periods.length} times</p>
                         <!-- <p>Between ${event.location.junctionUpstream} and ${event.location.junctionDownstream}</p> -->
                         <p><strong>Severity:</strong> <span class="severity ${getSeverityClass(event.severity)}">${event.severity || 'N/A'}</span></p>
                         <p><div class="lane-closures"><strong>Lane Closures:</strong>${generateLaneClosures(event.laneClosures)}</div></p>
@@ -178,9 +197,9 @@
 
                     
                     if (days > 0) {
-                        return `Not currently in progress, beginning in ${days} days`;
+                        return `Beginning in ${days} days`;
                     } else {
-                        return `Not currently in progress, beginning in ${hours} hours`;
+                        return `Beginning in ${hours} hours`;
                     }
                 }
             }
