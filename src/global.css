@@ -139,6 +139,13 @@ h2 {
     position: relative; /* For proper positioning of the close button */
 }
 
+/* Blue Info Banner */
+.notification-info {
+    background-color: #cddfff;
+    border: 1px solid #badeff;
+    color: #044b85;
+}
+
 /* Yellow Warning Banner */
 .notification-warning {
     background-color: #fff3cd;

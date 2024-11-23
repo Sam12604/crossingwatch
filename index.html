@@ -46,8 +46,16 @@
                                         // Create the banner
                                         const banner = document.createElement('div');
                                         banner.className = `notification-banner ${type}`;
+                                        
+                                        // This is a temp fix
+                                        const typeIcons = {
+                                            "notification-warning": "⚠️",
+                                            "notification-info": "ℹ",
+                                            "notification-severe": "🚨"
+                                        };
+                                        const icon = typeIcons[type] || "";
                                         banner.innerHTML = `
-                                            ${type === "notification-warning" ? "⚠️" : "🚨"} ${content}
+                                            ${icon} ${content}
                                             <button class="close-btn" onclick="this.parentElement.style.display='none';">×</button>
                                         `;
                                         container.appendChild(banner);
