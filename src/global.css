@@ -29,6 +29,13 @@ h2 {
     margin-bottom: 20px;
     border-radius: 8px;
     background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.in-progress {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
 }
 
 .roadwork h2 {

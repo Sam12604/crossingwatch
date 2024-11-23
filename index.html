@@ -22,25 +22,59 @@
 
 <body>
     <header>
-        <div class="notification-banner notification-warning">
-            ⚠️ This website is currently under construction.
-            <button class="close-btn" onclick="this.parentElement.style.display='none';">×</button>
-        </div>
+        <span>
+            <script>
+                async function loadNotifications() {
+                    const url = 'https://source.crossingwatch.co.uk/data/notification.json';
+                    const now = Math.floor(Date.now() / 1000); // Get current time in seconds
+                    const container = document.getElementById('notifications-container');
         
-        <div class="notification-banner notification-severe">
-            🚨 (TEST BANNER) Severe delays due to an accident. Expect long wait times.
-            <button class="close-btn" onclick="this.parentElement.style.display='none';">×</button>
-        </div>
+                    try {
+                        const response = await fetch(url);
+                        const data = await response.json();
         
-        <!-- <script>
-            window.addEventListener('load', () => {
-        fetch('https://crossingwatch.co.uk/src/footer.html')
-            .then(res => res.text())
-            .then(html => document.querySelector('header').innerHTML = html)
-            .catch(err => console.error('Failed to load footer:', err));
-        });
-    </script> -->
-    <h1>Crossing Watch</h1>
+                        if (data.notification && Array.isArray(data.notification)) {
+                            data.notification.forEach(notification => {
+                                const { type, content, start_time, end_time, display_times } = notification;
+        
+                                // Check if notification is within the valid time period
+                                if (now >= start_time && now <= end_time) {
+                                    // Check if the notification should be displayed at the current time
+                                    const shouldDisplay = display_times.some(time => now >= time.start && now <= time.end);
+        
+                                    if (shouldDisplay) {
+                                        // Create the banner
+                                        const banner = document.createElement('div');
+                                        banner.className = `notification-banner ${type}`;
+                                        banner.innerHTML = `
+                                            ${type === "notification-warning" ? "⚠️" : "🚨"} ${content}
+                                            <button class="close-btn" onclick="this.parentElement.style.display='none';">×</button>
+                                        `;
+                                        container.appendChild(banner);
+                                    }
+                                }
+                            });
+                        }
+                    } catch (error) {
+                        console.error('Error loading notifications:', error);
+                    }
+                }
+        
+                // Load notifications when the page loads
+                document.addEventListener('DOMContentLoaded', loadNotifications);
+            </script>
+            <div id="notifications-container"></div>
+        </span>
+            
+            <!-- <script>
+                window.addEventListener('load', () => {
+            fetch('https://crossingwatch.co.uk/src/footer.html')
+                .then(res => res.text())
+                .then(html => document.querySelector('header').innerHTML = html)
+                .catch(err => console.error('Failed to load footer:', err));
+            });
+        </script> -->
+        <h1>Crossing Watch</h1>
     </header>
 
     <div id="roadworks-container"></div>
@@ -88,10 +122,10 @@
                 container.innerHTML = '';
 
                 // Render sections with headers
-                renderSection(container, 'Currently in Progress', currentlyInProgress);
-                renderSection(container, 'Starting Today', startingToday);
-                renderSection(container, 'Starting This Week', startingThisWeek);
-                renderSection(container, 'Starting Later', startingLater);
+                renderSection(container, 'Currently in Progress', currentlyInProgress, 1);
+                renderSection(container, 'Starting Today', startingToday, 0);
+                renderSection(container, 'Starting This Week', startingThisWeek, 0);
+                renderSection(container, 'Starting Later', startingLater, 0);
 
             } catch (error) {
                 console.error('Error loading or processing data:', error);
@@ -100,7 +134,7 @@
 
     
         // Function to render a section with a header and events
-        function renderSection(container, title, events) {
+        function renderSection(container, title, events, status) {
             const sectionDiv = document.createElement('div');
             sectionDiv.className = 'section';
     
@@ -115,7 +149,12 @@
             } else {
                 events.forEach(event => {
                     const roadworkDiv = document.createElement('div');
-                    roadworkDiv.className = 'roadwork';
+
+                    if (status === 1) {
+                        roadworkDiv.className = 'roadwork in-progress';
+                    } else {
+                        roadworkDiv.className = 'roadwork';
+                    }
                     roadworkDiv.id = event.eventId;
     
                     roadworkDiv.innerHTML = `
