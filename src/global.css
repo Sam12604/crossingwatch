@@ -26,13 +26,19 @@ html {
 
 }
 
-.header h1 {
+.header h1{
     margin: 0;
     font-size: 2rem;
     font-weight: bold;
     letter-spacing: 1px;
+    width: 100%;
     flex: 1 1 100%; /* Full width on mobile */
     text-align: center; /* Center align on smaller screens */
+}
+
+.header h1 a{
+    color: #044b85; /* Text color */
+    text-decoration: none;
 }
 
 .navbar {
@@ -48,21 +54,18 @@ html {
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
-    padding: 10px 20px;
-    border-radius: 20px;
+    padding: 5px 10px;
     transition: background-color 0.3s ease, transform 0.2s ease;
     text-align: center;
 }
 
 .navbar a:hover {
-    background-color: #badeff;
     color: #044b85;
     transform: scale(1.1);
 }
 
 .navbar a:active {
     transform: scale(1.05);
-    background-color: #badeff;
 }
 
 /* Responsive Design for Mobile */
