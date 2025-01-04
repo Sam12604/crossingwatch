@@ -73,16 +73,16 @@
             </script>
             <div id="notifications-container"></div>
         </span>
-            
-            <!-- <script>
-                window.addEventListener('load', () => {
-            fetch('https://crossingwatch.co.uk/src/footer.html')
+        <div class="header">    
+        <script>
+            window.addEventListener('load', () => {
+            fetch('https://crossingwatch.co.uk/src/header.html')
                 .then(res => res.text())
-                .then(html => document.querySelector('header').innerHTML = html)
-                .catch(err => console.error('Failed to load footer:', err));
+                .then(html => document.getElementsByClassName('header')[0].innerHTML = html)
+                .catch(err => console.error('Failed to load header:', err));
             });
-        </script> -->
-        <h1>Crossing Watch</h1>
+        </script>
+       </div>
     </header>
 
     <div id="roadworks-container"></div>

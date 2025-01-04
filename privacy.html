@@ -7,7 +7,7 @@
     <meta name="author" content="CrossingWatch">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/global.css">
-    <title>DFD Crossing Expected Roadworks</title>
+    <title>Privacy - CrossingWatch</title>
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -22,25 +22,67 @@
 
 <body>
     <header>
-        <div class="notification-banner notification-warning">
-            ⚠️ This website is currently under construction.
-            <button class="close-btn" onclick="this.parentElement.style.display='none';">×</button>
-        </div>
+        <span>
+            <script>
+                async function loadNotifications() {
+                    const url = 'https://source.crossingwatch.co.uk/data/notification.json';
+                    const now = Math.floor(Date.now() / 1000); // Get current time in seconds
+                    const container = document.getElementById('notifications-container');
         
-        <div class="notification-banner notification-severe">
-            🚨 (TEST BANNER) Severe delays due to an accident. Expect long wait times.
-            <button class="close-btn" onclick="this.parentElement.style.display='none';">×</button>
-        </div>
+                    try {
+                        const response = await fetch(url);
+                        const data = await response.json();
         
-        <!-- <script>
+                        if (data.notification && Array.isArray(data.notification)) {
+                            data.notification.forEach(notification => {
+                                const { type, content, start_time, end_time, display_times } = notification;
+        
+                                // Check if notification is within the valid time period
+                                if (now >= start_time && now <= end_time) {
+                                    // Check if the notification should be displayed at the current time
+                                    const shouldDisplay = display_times.some(time => now >= time.start && now <= time.end);
+        
+                                    if (shouldDisplay) {
+                                        // Create the banner
+                                        const banner = document.createElement('div');
+                                        banner.className = `notification-banner ${type}`;
+                                        
+                                        // This is a temp fix
+                                        const typeIcons = {
+                                            "notification-warning": "⚠️",
+                                            "notification-info": "ℹ",
+                                            "notification-severe": "🚨"
+                                        };
+                                        const icon = typeIcons[type] || "";
+                                        banner.innerHTML = `
+                                            ${icon} ${content}
+                                            <button class="close-btn" onclick="this.parentElement.style.display='none';">×</button>
+                                        `;
+                                        container.appendChild(banner);
+                                    }
+                                }
+                            });
+                        }
+                    } catch (error) {
+                        console.error('Error loading notifications:', error);
+                    }
+                }
+        
+                // Load notifications when the page loads
+                document.addEventListener('DOMContentLoaded', loadNotifications);
+            </script>
+            <div id="notifications-container"></div>
+        </span>
+        <div class="header">    
+        <script>
             window.addEventListener('load', () => {
-        fetch('https://crossingwatch.co.uk/src/footer.html')
-            .then(res => res.text())
-            .then(html => document.querySelector('header').innerHTML = html)
-            .catch(err => console.error('Failed to load footer:', err));
-        });
-    </script> -->
-    <h1>Crossing Watch</h1>
+            fetch('https://crossingwatch.co.uk/src/header.html')
+                .then(res => res.text())
+                .then(html => document.getElementsByClassName('header')[0].innerHTML = html)
+                .catch(err => console.error('Failed to load header:', err));
+            });
+        </script>
+       </div>
     </header>
 
     <section id="privacy-policy">
